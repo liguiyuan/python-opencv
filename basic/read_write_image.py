@@ -1,7 +1,7 @@
 import cv2
 
 # 读取图片
-img = cv2.imread('test1.jpg')
+img = cv2.imread('../images/test1.jpg')
 
 # 显示图片
 cv2.namedWindow('Image')		# 先创建一个窗口

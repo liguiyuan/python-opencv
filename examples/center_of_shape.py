@@ -1,4 +1,5 @@
-# import the necessary packages
+# run: python center_of_shape.py --image ../images/test1.jpg
+
 import argparse
 import imutils
 import cv2
