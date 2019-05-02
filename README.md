@@ -1,5 +1,5 @@
 # python-opencv
-`basic`
+`basic`--基本操作
 
 [读取、显示、复制、保存图像](https://github.com/liguiyuan/python-opencv/blob/master/basic/read_write_image.py)
 
@@ -7,7 +7,7 @@
 
 
 
-`transformation`
+`transformation`--图像几何变换
 
 [图像缩放](https://github.com/liguiyuan/python-opencv/blob/master/transformation/1.image_resize.py)
 
@@ -21,7 +21,17 @@
 
 
 
-`examples`
+`enhancement`--图像增强
+
+[灰度图像直方图均衡化](https://github.com/liguiyuan/python-opencv/blob/master/enhancement/1.equalizeHist.py)
+
+[彩色图像直方图均衡化](https://github.com/liguiyuan/python-opencv/blob/master/enhancement/2.equalizeHist_color.py)
+
+[YUV直方图均衡化](https://github.com/liguiyuan/python-opencv/blob/master/enhancement/3.equalizeHist_YUV.py)
+
+
+
+`examples`--一些例子
 
 [计算图像轮廓中心坐标](https://github.com/liguiyuan/python-opencv/blob/master/examples/center_of_shape.py)
 
