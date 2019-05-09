@@ -31,6 +31,16 @@
 
 
 
+`threshold`--图像阈值分割
+
+[固定阈值二值化](https://github.com/liguiyuan/python-opencv/blob/master/threshold/1.fixed_threshold.py)
+
+[自适应阈值](https://github.com/liguiyuan/python-opencv/blob/master/threshold/2.adaptive_threshold.py)
+
+[Otsu阈值法](https://github.com/liguiyuan/python-opencv/blob/master/threshold/3.Otsu_threshold.py)
+
+
+
 `examples`--一些例子
 
 [计算图像轮廓中心坐标](https://github.com/liguiyuan/python-opencv/blob/master/examples/center_of_shape.py)
