@@ -41,11 +41,19 @@
 
 
 
+`segmentation`--图像分割
+
+[基于区域轮廓分割算法（findContours）](https://github.com/liguiyuan/python-opencv/blob/master/segmentation/1.findContours_segm1.py)
+
+[分水岭算法图像分割](https://github.com/liguiyuan/python-opencv/blob/master/examples/watershed.py)
+
+
+
 `examples`--一些例子
 
 [计算图像轮廓中心坐标](https://github.com/liguiyuan/python-opencv/blob/master/examples/center_of_shape.py)
 
 [黄色小球位置追踪](https://github.com/liguiyuan/python-opencv/blob/master/examples/ball_tracking.py)
 
-[分水岭算法图像分割](https://github.com/liguiyuan/python-opencv/blob/master/examples/watershed.py)
+
 
