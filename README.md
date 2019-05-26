@@ -45,7 +45,9 @@
 
 [基于区域轮廓分割算法（findContours）](https://github.com/liguiyuan/python-opencv/blob/master/segmentation/1.findContours_segm1.py)
 
-[分水岭算法图像分割](https://github.com/liguiyuan/python-opencv/blob/master/examples/watershed.py)
+[分水岭算法图像分割](https://github.com/liguiyuan/python-opencv/blob/master/segmentation/3.watershed.py)
+
+[Canny边缘检测分割](https://github.com/liguiyuan/python-opencv/blob/master/segmentation/2.canny_segm.py)
 
 
 
