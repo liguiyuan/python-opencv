@@ -29,6 +29,16 @@
 
 [YUV直方图均衡化](https://github.com/liguiyuan/python-opencv/blob/master/enhancement/3.equalizeHist_YUV.py)
 
+[调节图像对比度和亮度](https://github.com/liguiyuan/python-opencv/blob/master/enhancement/4.contrast.py)
+
+
+
+`detection`--图像检测
+
+[图像模糊检测](https://github.com/liguiyuan/python-opencv/blob/master/detection/1.blur_detection.py)
+
+[图像亮度检测](https://github.com/liguiyuan/python-opencv/blob/master/detection/2.brightness.py)
+
 
 
 `threshold`--图像阈值分割
