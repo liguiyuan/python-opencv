@@ -5,6 +5,8 @@
 
 [从摄像头读取视频](https://github.com/liguiyuan/python-opencv/blob/master/basic/video_capture.py)
 
+[opencv绘图（画线、画圆、椭圆、多边形）](https://github.com/liguiyuan/python-opencv/blob/master/basic/drawing.py)
+
 
 
 `transformation`--图像几何变换
@@ -38,6 +40,8 @@
 [图像模糊检测](https://github.com/liguiyuan/python-opencv/blob/master/detection/1.blur_detection.py)
 
 [图像亮度检测](https://github.com/liguiyuan/python-opencv/blob/master/detection/2.brightness.py)
+
+[图像边缘检测（canny）](https://github.com/liguiyuan/python-opencv/blob/master/detection/3.canny.py)
 
 
 
