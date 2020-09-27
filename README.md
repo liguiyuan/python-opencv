@@ -64,6 +64,11 @@
 [Canny边缘检测分割](https://github.com/liguiyuan/python-opencv/blob/master/segmentation/2.canny_segm.py)
 
 
+`calculation`--图像计算
+
+[计算和绘制灰度、彩色图像直方图（calcHist）](https://github.com/liguiyuan/python-opencv/blob/master/calculation/histogram.py)
+
+
 
 `examples`--一些例子
 
