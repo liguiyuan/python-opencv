@@ -1,3 +1,4 @@
+# 参考：
 # https://www.jb51.net/article/183678.htm
 # https://www.jb51.net/article/164106.htm
 
@@ -7,17 +8,20 @@ from matplotlib import pyplot as plt
 import time
 
 def main():
-    img1 = cv2.imread('../images/3.jpg')
-    img2 = cv2.imread('../images/4.jpg')
+    img1 = cv2.imread('../images/mosaic1.jpg')
+    img2 = cv2.imread('../images/mosaic2.jpg')
     img1_height, img1_width, _ = img1.shape[:]
     img2_height, img2_width, _ = img2.shape[:]
-    print(img1_height, img1_width, _)
+
+    if (img1_height != img2_height) or (img1_width != img2_width):
+        print('two images sizes not matching.')
+        return
 
     starttime = time.time()
-    hessian = 400                   # hessian 的阈值为400，阈值越大能检测的特征就越小
+    hessian = 400                   # hessian 的阈值为400，阈值越大能检测的特征就越少
     surf = cv2.xfeatures2d.SURF_create(hessian, nOctaves=4, extended=False, upright=True)
 
-    kp1, descrip1 = surf.detectAndCompute(img1, None) # 查找关键点和描述符
+    kp1, descrip1 = surf.detectAndCompute(img1, None)   # 查找关键点和描述符
     kp2, descrip2 = surf.detectAndCompute(img2, None)
 
     FLANN_INDEX_KDTREE = 0          # 建立FLANN匹配器的参数
@@ -45,18 +49,12 @@ def main():
         direct = warpImg.copy()
         direct[0:img1_height, 0:img1_width] = img1              # 把图像1拼接在warpImg上，因为warpImg此时只有img2的像素
         cv2.imwrite('simplepanorma.png', direct)
-        simple = time.time()
-        print('simple stich cost: ', (simple-starttime))
-        
-        img3 = cv2.cvtColor(direct, cv2.COLOR_BGR2RGB)
-        plt.imshow(img3)
-        plt.show()
+        cv2.imshow('no smooth', direct)
 
         # 平滑处理
-        """
         rows, cols = img1_height, img1_width
         for col in range(0, cols):
-            if img1[:, col].any() and warpImg[:,col].any():     # 开始重叠的最左端
+            if img1[:, col].any() and warpImg[:,col].any():     # 开始重叠的最左一列
                 left = col
                 break
 
@@ -64,8 +62,8 @@ def main():
             if img1[:, col].any() and warpImg[:, col].any():    # 重叠的最右一列
                 right = col
                 break
-
-        res = np.zeros([rows, cols, 3], np.uint8)
+        
+        res = np.zeros([rows, cols, 3], np.uint8)       # 平滑处理：只对img1做调整
         for row in range(0, rows):
             for col in range(0, cols):
                 if not img1[row, col].any():            # 如果没有原图，用旋转的填充
@@ -73,23 +71,20 @@ def main():
                 elif not warpImg[row, col].any():
                     res[row, col] = img1[row, col]
 
-                else:
+                else:                                   # 做平滑处理
                     scrImgLen = float(abs(col-left))
                     testImgLen = float(abs(col - right))
                     alpha = scrImgLen / (scrImgLen + testImgLen)
-                    res[row, col] = np.clip(img1[row, col]*(1-alpha) + warpImg[row, col]*alpha, 0, 255)
-
+                    res[row, col] = np.clip(img1[row, col]*(1-alpha) + warpImg[row, col]*alpha, 0, 255) # 平滑方法
+        
         warpImg[0:img1_height, 0:img1_width] = res
-        final = time.time()
-        
+        endtime = time.time()
+        print('cost time: ', (endtime-starttime))
 
-        img4 = cv2.cvtColor(warpImg, cv2.COLOR_BGR2RGB)
-        plt.imshow(img4,)
-        plt.show()
-        print('total cost: ', (final-starttime))
-        
         cv2.imwrite('bestpanorma.png', warpImg)
-        """
+        cv2.imshow('smooth', warpImg)
+        cv2.waitKey(0)
+        
     else:
         print('not enough matches!')
 
