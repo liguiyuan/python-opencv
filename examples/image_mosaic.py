@@ -29,14 +29,18 @@ def main():
     searchParams = dict(checks=50)  # 指定递归次数
 
     flann = cv2.FlannBasedMatcher(indexParams, searchParams)    # FlannBasedMatcher 是目前最快的特征匹配算法（最近邻搜索）
-    match = flann.knnMatch(descrip1, descrip2, k=2)             # 得出匹配的关键点
+    matches = flann.knnMatch(descrip1, descrip2, k=2)             # 得出匹配的关键点
 
     # 提取优秀的特征点
     good = []
-    for i, (m, n) in enumerate(match):
-        if (m.distance < 0.75*n.distance):  # 如果第一个邻近距离比第二个邻近距离的0.75倍小，则保留
+    for i, (m, n) in enumerate(matches):
+        if (m.distance < 0.7*n.distance):  # 如果第一个邻近距离比第二个邻近距离的0.75倍小，则保留
             good.append(m)
-    print(len(good))
+    print('good features: ', len(good))
+
+    good_matches = np.expand_dims(good, 1)
+    matches_image = cv2.drawMatchesKnn(img1, kp1, img2, kp2, good_matches, None, flags=2)
+    cv2.imshow('feature matches: ', matches_image)
 
     MIN = 10
     if len(good) > MIN:
@@ -44,11 +48,9 @@ def main():
         ano_pts = np.float32([kp2[m.trainIdx].pt for m in good]).reshape(-1, 1, 2)  # 训练（模板）图像的特征描述子索引
         M, mask = cv2.findHomography(src_pts, ano_pts, cv2.RANSAC, 5.0)             # 生成变换矩阵
         warpImg = cv2.warpPerspective(img2, np.linalg.inv(M), (img1_width+img2_width, img2_height)) # 透视变换，新图像可容纳完整的两幅画
-        print('warpImg shape: ', warpImg.shape)
 
         direct = warpImg.copy()
         direct[0:img1_height, 0:img1_width] = img1              # 把图像1拼接在warpImg上，因为warpImg此时只有img2的像素
-        cv2.imwrite('simplepanorma.png', direct)
         cv2.imshow('no smooth', direct)
 
         # 平滑处理
