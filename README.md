@@ -33,6 +33,8 @@
 
 [调节图像对比度和亮度](https://github.com/liguiyuan/python-opencv/blob/master/enhancement/4.contrast.py)
 
+[实现运动模糊和高斯模糊](https://github.com/liguiyuan/python-opencv/blob/master/enhancement/5.image_blur.py)
+
 
 
 `detection`--图像检测
