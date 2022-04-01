@@ -45,6 +45,7 @@
 
 [图像边缘检测（canny）](https://github.com/liguiyuan/python-opencv/blob/master/detection/3.canny.py)
 
+[人脸模糊检测(DCT算法)](https://github.com/liguiyuan/python-opencv/blob/master/detection/4.face_blur_detection.py)
 
 
 `threshold`--图像阈值分割
