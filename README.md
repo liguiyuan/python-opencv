@@ -48,6 +48,8 @@
 [人脸模糊检测(DCT算法)](https://github.com/liguiyuan/python-opencv/blob/master/detection/4.face_blur_detection.py)
 
 
+
+
 `threshold`--图像阈值分割
 
 [固定阈值二值化](https://github.com/liguiyuan/python-opencv/blob/master/threshold/1.fixed_threshold.py)
@@ -65,6 +67,10 @@
 [分水岭算法图像分割](https://github.com/liguiyuan/python-opencv/blob/master/segmentation/3.watershed.py)
 
 [Canny边缘检测分割](https://github.com/liguiyuan/python-opencv/blob/master/segmentation/2.canny_segm.py)
+
+[最小外接矩形（minAreaRect）](https://github.com/liguiyuan/python-opencv/blob/master/segmentation/4.minArea_rect.py)
+
+
 
 `calculation`--图像计算
 
