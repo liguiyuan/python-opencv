@@ -86,3 +86,7 @@
 
 [图像拼接](https://github.com/liguiyuan/python-opencv/blob/master/examples/image_mosaic.py)
 
+[移动侦测](https://github.com/liguiyuan/python-opencv/blob/master/examples/frame_diff.py)
+
+
+
