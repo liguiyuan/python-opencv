@@ -70,6 +70,8 @@
 
 [最小外接矩形（minAreaRect）](https://github.com/liguiyuan/python-opencv/blob/master/segmentation/4.minArea_rect.py)
 
+[水平投影与垂直投影分割](https://github.com/liguiyuan/python-opencv/blob/master/segmentation/5.projection_segm.py)
+
 
 
 `calculation`--图像计算
